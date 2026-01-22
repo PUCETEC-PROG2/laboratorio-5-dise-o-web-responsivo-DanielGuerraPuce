@@ -1,7 +1,7 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 32px;
+    padding: 16px;
 }
 
 .pokemon-grid {
@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
-    padding: 16px;
+    padding: 32px;
 }
 
 .pokemon-card {
@@ -80,15 +80,28 @@
     background: linear-gradient(135deg, rgb(0, 135, 197), rgb(241, 73, 73), rgb(234, 72, 255))
 }
 
-@media screen and (max-width: 768px) {
-    .pkemon-grid {
-        width: 100%;
-        gap: 8px;
+@media screen and (max-width: 620px) {
+  .pokemon-grid {
+    width: 100%;
+    gap: 8px;
+    padding: 8px; 
+  }
 
-    }
+  .pokemon-card {
+    flex: 100%; 
+    max-width: 100%;
+    min-width: unset; 
+  }
 
-    .nav-log img {
-        flex: 100%;
-        max-width: 100%;
-    }
- }
+  .nav-log img {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 620px) and (max-width: 1100px) {
+  .pokemon-card {
+    flex: calc(50% - 16px); /* 2 cards per row */
+    max-width: calc(50% - 16px);
+  }
+}
